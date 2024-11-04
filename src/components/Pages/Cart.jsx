@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
   return (
    <>
-   <div className='bg-orange-500 text-center'>
+   <div className='bg-slate-400 text-2xl text-right'>
         <Link className="px-6 hover:text-white hover:bg-blue-700" to="/">Home</Link>
         <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Shopping">Shopping</Link>
         <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Cart">Cart</Link>
