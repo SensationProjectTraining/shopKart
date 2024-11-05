@@ -40,6 +40,7 @@ const Shopping = () => {
               key={product.id}
               className="bg-white w-[250px] border-2 border-black p-2 mb-2 rounded-lg shadow-red-400 shadow-lg hover:scale-95 duration-300 ease-linear"
             >
+              <button type='button' className='relative left-[150px] bg-sky-400 p-2 font-bold text-white rounded-md hover:bg-gradient-to-tr from-red-500 to-yellow-300'>Add Cart</button>
               <h1 className="text-blue-700 font-semibold text-center hover:text-red-500">
                 {product.title}
               </h1>
