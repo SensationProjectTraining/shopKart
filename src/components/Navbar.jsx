@@ -1,34 +1,84 @@
-import { Link } from 'react-router-dom';
-import { useUserContext } from '../Context/Context';
+import { Link } from "react-router-dom";
+import { useUserContext } from "../Context/Context";
+import { IoMdSearch } from "react-icons/io";
+import { BiHelpCircle } from "react-icons/bi";
+import { MdShoppingCart } from "react-icons/md";
 
 const Navbar = () => {
   const { currentUser, logout } = useUserContext();
 
   return (
-    <div className='bg-white text-2xl text-center flex'>
-      <div className='px-6'><img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1631/posts/40055/image-upload/Screenshot_2022_02_16_at_9_30_14_am_copy.jpg"  width={100} height={100} alt="Logo" /></div>
-      <div className='py-5 w-full'>
-        <Link className="px-6 hover:text-white hover:bg-blue-700" to="/">Home</Link>
-      <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Shopping">Shopping</Link>
-      <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Cart">Cart</Link>
-      {currentUser ? (
-        <>
-          <span className="px-6">Welcome, {currentUser.username}</span>
-          <button 
-            onClick={() => {
-              logout();
-              // Optional: navigate to home or login page after logout
-            }}
-            className="px-6 hover:text-white hover:bg-blue-700"
+    <div>
+      <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1">
+        free shopping on Order Over $75. Free Return
+      </h1>
+      <div className="flex">
+        <div className="bg-white text-1xl text-left py-3 px-3">
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/"
           >
-            Logout
-          </button>
-        </>
-        
-      ) : (
-        <Link className="px-6 hover:text-white hover:bg-blue-700" to="/login">Login/SignUp</Link>
-      )}
-    </div>
+            Home
+          </Link>
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/Shopping"
+          >
+            Shopping
+          </Link>
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/Cart"
+          >
+            Cart
+          </Link>
+          {currentUser ? (
+            <>
+              <span className="px-2">Welcome, {currentUser.username}</span>
+              <button
+                onClick={() => {
+                  logout();
+                  // Optional: navigate to home or login page after logout
+                }}
+                className="px-6 hover:text-white hover:bg-blue-700"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link
+              className="px-2 font-bold hover:text-white hover:bg-blue-700"
+              to="/login"
+            >
+              Login
+            </Link>
+          )}
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/SignUP"
+          >
+            SignUp
+          </Link>
+        </div>
+        <div>
+          <img
+            className="mx-72"
+            src="https://www.allbirds.com/cdn/shop/t/2544/assets/allbirds-logo-fb.jpg?v=92553177456616239951730727869"
+            width={100}
+            height={100}
+          ></img>
+        </div>
+        <div className="flex ml-auto space-x-4">
+          <IoMdSearch className="text-4xl" />
+          <BiHelpCircle className="text-4xl" />
+          <MdShoppingCart className="text-4xl" />
+        </div>
+      </div>
+      <div className="justify-center items-center bg-slate-100 flex gap-4">
+        <h3>Men Shoes</h3>
+        <h3>Women Shoes</h3>
+        <h3>New Arrivals</h3>
+      </div>
     </div>
   );
 };
