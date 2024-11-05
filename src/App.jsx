@@ -1,21 +1,24 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import SignUp from './components/SignUp';
-import Login from './components/Login';
-import { UserProvider } from './Context/Context';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './components/Pages/Home'
+import Login from './components/Pages/Login'
+import { UserProvider } from './Context/Context'
+import SignUp from './components/Pages/SignUp'
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <UserProvider>
-        <div className='flex gap-2'> 
-          <SignUp />
-          <Login />
-        </div>
-      </UserProvider>
-    </div>
-  );
-};
+    <UserProvider>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
+  )
+}
 
-export default App;
+export default App
