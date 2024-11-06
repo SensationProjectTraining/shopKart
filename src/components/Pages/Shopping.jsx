@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { FcRating } from "react-icons/fc";
+import Skeleton from 'react-loading-skeleton'; 
+import 'react-loading-skeleton/dist/skeleton.css';
 import { FiLoader } from "react-icons/fi"; 
 
 const Shopping = () => {
@@ -30,12 +31,18 @@ const Shopping = () => {
   return (
     <div>
         <h1 className="rounded-t-3xl text-center h-[70px] bg-cover p-2 text-white font-bold text-3xl bg-[url('https://media1.thehungryjpeg.com/thumbs2/ori_3835815_wk0wopmkr838t66mrszoxs7sq5s3ei2ail3lh5o1_theater-stage-festive-background-audience-movie-opera-light-with-red.jpg')]">Cop Top Brands</h1>
-      <div className="bg-[url('https://img.freepik.com/premium-photo/curtain-with-brown-curtain-left-side_14117-9119.jpg')] p-3 flex flex-wrap justify-evenly">
+      <div className=" bg-[url('https://img.freepik.com/premium-photo/curtain-with-brown-curtain-left-side_14117-9119.jpg')] p-3 flex flex-wrap justify-evenly">
         {isLoading ? (
-          <h1 className="h-[500px] w-full text-8xl flex justify-center p-20 items-center">
-            <FiLoader className="animate-spin inline-block text-yellow-400 text-9xl" />
-          </h1>
-          
+          Array.from({length:6}).map((_,index)=>( 
+
+          <div key={index} className='"bg-white border-4 border-yellow-400 h-[350px] w-[240px]  p-2  mt-7 rounded-xl shadow-amber-500 shadow-lg'>
+        <Skeleton className='mb-3 mt-[50px]' height={100} width="100%"></Skeleton>
+        <Skeleton className='mb-2' height={30} width="100%"></Skeleton>
+        <Skeleton className='mb-2' height={20} width="100%"></Skeleton><hr className='mt-6'></hr>
+        <Skeleton className='mb-2' height={20} width="40%"></Skeleton>
+        <Skeleton height={30} width="20%"></Skeleton>
+          </div>
+         ))
         ) : (
           storeData.map((product) => (
             <div
