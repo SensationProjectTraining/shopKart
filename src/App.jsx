@@ -20,8 +20,8 @@ const App = () => {
         <Navbar/><br/>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/Shopping" element={<Shopping/>}></Route>
-          <Route path="/Cart" element={<Cart/>}></Route>
+          <Route path="/Shopping" element={<Shopping/>}/>
+          <Route path="/Cart" element={<Cart/>} />
           <Route path="/shopping" element={<Shopping/>} />
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/login" element={<Login/>}/>
