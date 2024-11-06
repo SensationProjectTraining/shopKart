@@ -8,7 +8,10 @@ const Navbar = () => {
     <div className='bg-slate-400 text-2xl text-right'>
       <Link className="px-6 hover:text-white hover:bg-blue-700" to="/">Home</Link>
       <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Shopping">Shopping</Link>
+      
       <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Cart">Cart</Link>
+      <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Contact">Contact</Link>
+      
       {currentUser ? (
         <>
           <span className="px-6">Welcome, {currentUser.username}</span>
