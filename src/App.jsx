@@ -7,23 +7,30 @@ import { UserProvider } from './Context/Context'
 import SignUp from './components/Pages/SignUp'
 import Shopping from './components/Pages/Shopping'
 import Cart from './components/Pages/Cart'
-import ContactUs from "./components/Pages/ContectUs"
+import Footer from './components/Footer'
+import Shopping from './components/Pages/Shopping'
+import ContactUs from "./components/Pages/ContactUs"
+
 
 const App = () => {
   return (
+    <>
     <UserProvider>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar/><br/>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Shopping" element={<Shopping/>}></Route>
           <Route path="/Cart" element={<Cart/>}></Route>
+          <Route path="/shopping" element={<Shopping/>} />
+          <Route path="/contact" element={<ContactUs/>} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<SignUp/>}/>
-          <Route path='/contact' element={<ContactUs/>}></Route>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </UserProvider>
+    </>
   )
 }
 
