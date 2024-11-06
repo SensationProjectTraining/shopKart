@@ -8,6 +8,7 @@ const Navbar = () => {
   const { currentUser, logout } = useUserContext();
 
   return (
+
     <div>
       <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1">
         free shopping on Order Over $75. Free Return
@@ -17,6 +18,24 @@ const Navbar = () => {
           <Link
             className="px-2 font-bold hover:text-white hover:bg-blue-700"
             to="/"
+
+    <div className='bg-slate-400 text-2xl text-right'>
+      <Link className="px-6 hover:text-white hover:bg-blue-700" to="/">Home</Link>
+      <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Shopping">Shopping</Link>
+      
+      <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Cart">Cart</Link>
+      <Link className="px-6 hover:text-white hover:bg-blue-700" to="/Contact">Contact</Link>
+      
+      {currentUser ? (
+        <>
+          <span className="px-6">Welcome, {currentUser.username}</span>
+          <button 
+            onClick={() => {
+              logout();
+              // Optional: navigate to home or login page after logout
+            }}
+            className="px-6 hover:text-white hover:bg-blue-700"
+
           >
             Home
           </Link>
