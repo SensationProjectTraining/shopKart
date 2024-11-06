@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 const Home = () => {
   const Image=[
     "https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_1728/cms/F7x1nF5Ph1DzVxxEduf3V/1699985e7be02c57fb4753a494fbfd4c/24Q4_ColorFlow1_Site_HomepageHero_Desktop_880x1245_US_Blank.png",
+    "https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_1728/cms/F7x1nF5Ph1DzVxxEduf3V/1699985e7be02c57fb4753a494fbfd4c/24Q4_ColorFlow1_Site_HomepageHero_Desktop_880x1245_US_Blank.png",
     "https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_1920/cms/289bH0CF9S0jfBtY5Z9R6K/8c5e546b86223dbfbf5a45c2ec913aa2/Update_24Q4_TreeRunner_Site_HomepageHero_Desktop_2880x1245.png"
   ]
   const [currentIndex, setIndex] =useState(0)
