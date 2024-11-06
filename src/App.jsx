@@ -5,9 +5,11 @@ import Home from './components/Pages/Home'
 import Login from './components/Pages/Login'
 import { UserProvider } from './Context/Context'
 import SignUp from './components/Pages/SignUp'
-import Footer from './components/Footer'
 import Shopping from './components/Pages/Shopping'
+import Cart from './components/Pages/Cart'
+import Footer from './components/Footer'
 import ContactUs from "./components/Pages/ContactUs"
+import SearchBar from './components/searchBar'
 
 
 const App = () => {
@@ -18,10 +20,12 @@ const App = () => {
         <Navbar/><br/>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/shopping" element={<Shopping/>} />
+          <Route path="/Shopping" element={<Shopping/>}/>
+          <Route path="/Cart" element={<Cart/>} />
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/searchbar" element={<SearchBar/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>
