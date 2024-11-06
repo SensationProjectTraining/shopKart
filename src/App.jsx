@@ -8,8 +8,8 @@ import SignUp from './components/Pages/SignUp'
 import Shopping from './components/Pages/Shopping'
 import Cart from './components/Pages/Cart'
 import Footer from './components/Footer'
-import Shopping from './components/Pages/Shopping'
 import ContactUs from "./components/Pages/ContactUs"
+import SearchBar from './components/searchBar'
 
 
 const App = () => {
@@ -26,6 +26,7 @@ const App = () => {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/searchbar" element={<SearchBar/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>
