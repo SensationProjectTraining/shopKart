@@ -5,7 +5,7 @@ const SearchBar = () => {
   }
   return (
     <div className='flex justify-center'>
-      <input className='w-96 text-1xl border rounded-full text-black border-r-8 red px-2 h-10' type="search" placeholder='Search your Required' />
+      <input className="w-48 p-2 text-lg border transition-all duration-300 ease-in-out focus:w-96 focus:outline-none" type="search" placeholder='Search your Required' />
       <h1 className="text-4xl" onClick={SearchClick}>{<IoMdSearch/>}</h1>
     </div>
   )
