@@ -15,13 +15,7 @@ const Navbar = () => {
       </h1>
       
       <div className="flex w-full">
-        <div className="flex text-3xl gap-6 mx-10">
-        <Link to="/searchBar">
-        <IoMdSearch/>
-        </Link>
-        <Link><BiHelpCircle/></Link>
-        <Link to="/Cart"><MdShoppingCart/></Link>
-        </div>
+      <span className=" font-bold flex hover:text-white uppercase hover:bg-blue-700 text-left">Welcome,{currentUser.username}</span>
         <div className="bg-white text-1xl flex justify-end w-full">
           <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
             to="/">Home</Link>
@@ -33,7 +27,6 @@ const Navbar = () => {
             to="/Contact">Contact</Link>
           {currentUser ? (
             <>
-              <span className="px-2 font-bold hover:text-white uppercase hover:bg-blue-700">Welcome, {currentUser.username}</span>
               <button className="px-2 font-bold hover:text-white hover:bg-blue-700"
                 onClick={() => {
                   logout();
@@ -59,6 +52,13 @@ const Navbar = () => {
               </Link>
             </>
           )}
+          <div className="flex text-2xl gap-2">
+          <Link to="/searchBar">
+          <IoMdSearch/>
+          </Link>
+          <Link><BiHelpCircle/></Link>
+          <Link to="/Cart"><MdShoppingCart/></Link>
+          </div>
         </div>
       </div>
 
