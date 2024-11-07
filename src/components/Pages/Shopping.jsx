@@ -65,12 +65,6 @@ const Shopping = () => {
               </p> 
               <hr></hr>
 
-<<<<<<< HEAD
-<div className="p-1 rounded-xl items-center text-white bg-green-700 inline-flex w-[50px] mt-3">
-<h1>{product.rating.rate}</h1>
-<FaStar  className="text-lg " />
-              
-=======
               <div className="flex items-center">
                 <BsCurrencyDollar className="text-lg" />
                 <p className="text-lg">{product.price}</p>
@@ -79,7 +73,6 @@ const Shopping = () => {
               <div className="p-1 rounded-xl items-center text-white bg-green-700 inline-flex w-[50px] mt-3">
                 <h1>{product.rating.rate}</h1>
                 <FaStar className="text-lg" />
->>>>>>> 37547672999bbf9ea8ce604404c9e5da3b73d711
               </div>
             </div>
           ))
