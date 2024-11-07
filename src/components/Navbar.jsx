@@ -3,19 +3,22 @@ import { useUserContext } from "../Context/Context";
 import { IoMdSearch } from "react-icons/io";
 import { BiHelpCircle } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
+import SearchBar from "./searchBar";
 
 const Navbar = () => {
   const { currentUser, logout } = useUserContext();
-
+  
   return (
     <div>
       <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1">
         free shopping on Order Over $75. Free Return
       </h1>
       
-      <div className="flex">
+      <div className="flex w-full">
         <div className="flex text-3xl gap-6 mx-10">
-        <Link to="/searchBar"><IoMdSearch/></Link>
+        <Link to="/searchBar">
+        <IoMdSearch/>
+        </Link>
         <Link><BiHelpCircle/></Link>
         <Link to="/Cart"><MdShoppingCart/></Link>
         </div>
@@ -30,7 +33,7 @@ const Navbar = () => {
             to="/Contact">Contact</Link>
           {currentUser ? (
             <>
-              <span className="px-2 font-bold hover:text-white hover:bg-blue-700">Welcome, {currentUser.username}</span>
+              <span className="px-2 font-bold hover:text-white uppercase hover:bg-blue-700">Welcome, {currentUser.username}</span>
               <button className="px-2 font-bold hover:text-white hover:bg-blue-700"
                 onClick={() => {
                   logout();
