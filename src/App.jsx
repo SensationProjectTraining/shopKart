@@ -14,7 +14,7 @@ import SearchBar from './components/searchBar'
 
 const App = () => {
   return (
-    <>
+    <div >
     <UserProvider>
       <BrowserRouter>
         <Navbar/><br/>
@@ -30,7 +30,7 @@ const App = () => {
         <Footer/>
       </BrowserRouter>
     </UserProvider>
-    </>
+    </div>
   )
 }
 
