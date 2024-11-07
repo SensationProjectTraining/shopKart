@@ -14,20 +14,27 @@ const Navbar = () => {
         free shopping on Order Over $75. Free Return
       </h1>
       
-      <div className="flex w-full">
-      <span className=" font-bold flex hover:text-white uppercase hover:bg-blue-700 text-left">Welcome,{currentUser?.username}</span>
+      <div className="flex w-full px-5">
+      {currentUser ? (
+          <span className="font-bold flex uppercase text-left px-4">Welcome,{currentUser?.username}</span>
+        ) : (
+          <>
+            
+          </>
+        )}
+
         <div className="bg-white text-1xl flex justify-end w-full">
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/">Home</Link>
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
+          <Link className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-2xl"
+             to="/">Home</Link>
+          <Link className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-2xl"
             to="/Shopping">Shopping</Link>
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
+          <Link className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-2xl"
             to="/Cart">Cart</Link>
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
+          <Link className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-2xl"
             to="/Contact">Contact</Link>
           {currentUser ? (
             <>
-              <button className="px-2 font-bold hover:text-white hover:bg-blue-700"
+              <button className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-2xl"
                 onClick={() => {
                   logout();
                   // Optional: navigate to home or login page after logout
@@ -39,13 +46,13 @@ const Navbar = () => {
           ) : (
             <>
               <Link
-                className="px-2 font-bold hover:text-white hover:bg-blue-700"
+                className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-2xl"
                 to="/login"
               >
                 Login
               </Link>
               <Link
-                className="px-2 font-bold hover:text-white hover:bg-blue-700"
+                className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-2xl"
                 to="/SignUP"
               >
                 SignUp
@@ -54,18 +61,12 @@ const Navbar = () => {
           )}
           <div className="flex text-2xl gap-2">
           <Link to="/searchBar">
-          <IoMdSearch/>
+          <IoMdSearch className="hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-3xl"/>
           </Link>
-          <Link><BiHelpCircle/></Link>
-          <Link to="/Cart"><MdShoppingCart/></Link>
+          <Link><BiHelpCircle className="hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-3xl"/></Link>
+          <Link to="/Cart"><MdShoppingCart className="hover:text-white hover:bg-orange-500 hover:rounded-3xl hover:text-3xl"/></Link>
           </div>
         </div>
-      </div>
-
-      <div className="justify-center items-center bg-slate-100 flex gap-4 ">
-        <h3>Men Shoes</h3>
-        <h3>Women Shoes</h3>
-        <h3>New Arrivals</h3>
       </div>
     </div>
   );
