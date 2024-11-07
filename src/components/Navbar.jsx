@@ -8,8 +8,8 @@ const Navbar = () => {
   const { currentUser, logout } = useUserContext();
 
   return (
-    <div>
-      <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1">
+    <div >
+      <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1 ">
         free shopping on Order Over $75. Free Return
       </h1>
       
@@ -88,7 +88,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="justify-center items-center bg-slate-100 flex gap-4">
+      <div className="justify-center items-center bg-slate-100 flex gap-4 ">
         <h3>Men Shoes</h3>
         <h3>Women Shoes</h3>
         <h3>New Arrivals</h3>
