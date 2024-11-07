@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 import { VscArrowCircleLeft } from "react-icons/vsc";
 import { VscArrowCircleRight } from "react-icons/vsc";
@@ -36,8 +37,17 @@ const Home = () => {
       <div className='absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2 px-4'>
         <button className='text-5xl text-white' onClick={previousbtn}>{<VscArrowCircleLeft/>}</button>
         <button className='text-5xl text-white' onClick={nextbtn}>{<VscArrowCircleRight/>}</button></div>
+=======
+import React from 'react'
+import Banner from './Banner'
+import Category from './Category'
+export const Home = () => {
+  return (
+    <div>
+      <Banner/>
+      <Category/>
+>>>>>>> 37547672999bbf9ea8ce604404c9e5da3b73d711
     </div>
   )
 }
-
-export default Home
+export default Home;
