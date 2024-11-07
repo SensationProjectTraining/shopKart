@@ -3,53 +3,43 @@ import { useUserContext } from "../Context/Context";
 import { IoMdSearch } from "react-icons/io";
 import { BiHelpCircle } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
-import ContactUs from "./Pages/ContactUs";
+import SearchBar from "./searchBar";
+
 const Navbar = () => {
   const { currentUser, logout } = useUserContext();
-
+  
   return (
     <div>
       <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1">
         free shopping on Order Over $75. Free Return
       </h1>
       
-      <div className="flex">
-        <div className="bg-white text-1xl text-left py-3 px-3">
-          <Link
-            className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/"
-          >
-            Home
-          </Link>
-          <Link
-            className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/Shopping"
-          >
-            Shopping
-          </Link>
-          <Link
-            className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/Cart"
-          >
-            Cart
-          </Link>
-          <Link
-            className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/Contact"
-          >
-            Contact
-          </Link>
-          
+      <div className="flex w-full">
+        <div className="flex text-3xl gap-6 mx-10">
+        <Link to="/searchBar">
+        <IoMdSearch/>
+        </Link>
+        <Link><BiHelpCircle/></Link>
+        <Link to="/Cart"><MdShoppingCart/></Link>
+        </div>
+        <div className="bg-white text-1xl flex justify-end w-full">
+          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/">Home</Link>
+          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/Shopping">Shopping</Link>
+          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/Cart">Cart</Link>
+          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
+            to="/Contact">Contact</Link>
           {currentUser ? (
             <>
-              <span className="px-2">Welcome, {currentUser.username}</span>
-              <button
+              <span className="px-2 font-bold hover:text-white uppercase hover:bg-blue-700">Welcome, {currentUser.username}</span>
+              <button className="px-2 font-bold hover:text-white hover:bg-blue-700"
                 onClick={() => {
                   logout();
                   // Optional: navigate to home or login page after logout
                 }}
-                className="px-6 hover:text-white hover:bg-blue-700"
-              >
+                >
                 Logout
               </button>
             </>
@@ -69,22 +59,6 @@ const Navbar = () => {
               </Link>
             </>
           )}
-        </div>
-
-        <div>
-          <img
-            className="mx-72"
-            src="https://www.allbirds.com/cdn/shop/t/2544/assets/allbirds-logo-fb.jpg?v=92553177456616239951730727869"
-            width={100}
-            height={100}
-            alt="Allbirds Logo"
-          />
-        </div>
-
-        <div className="flex ml-auto space-x-4">
-          <IoMdSearch className="text-4xl" />
-          <BiHelpCircle className="text-4xl" />
-          <MdShoppingCart className="text-4xl" />
         </div>
       </div>
 
