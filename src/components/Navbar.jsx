@@ -3,27 +3,26 @@ import { useUserContext } from "../Context/Context";
 import { IoMdSearch } from "react-icons/io";
 import { BiHelpCircle } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
-import SearchBar from "./searchBar";
 
 const Navbar = () => {
   const { currentUser, logout } = useUserContext();
 
   return (
     <div>
-      <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1 ">
+      <h1 className="bg-customBrown w-full fixed text-center text-white font-bold h-8 py-0 ">
         free shopping on Order Over $75. Free Return
       </h1>
 
-      <div className="flex w-full px-5">
+      <div className="flex p-10 mt-2">
         {currentUser ? (
-          <span className="font-bold flex uppercase text-left px-4">
+          <span className="font-bold flex uppercase fixed text-left px-4">
             Welcome,{currentUser?.username}
           </span>
         ) : (
           <></>
         )}
 
-        <div className="bg-white text-1xl flex justify-end w-full">
+        <div className=" font-serif  text-1xl flex justify-end w-full">
           <Link
             className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
             to="/"
