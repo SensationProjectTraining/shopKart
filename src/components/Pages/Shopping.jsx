@@ -3,7 +3,6 @@ import { FaStar } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
 import Skeleton from 'react-loading-skeleton'; 
 import 'react-loading-skeleton/dist/skeleton.css';
-import { FiLoader } from "react-icons/fi"; 
 
 const Shopping = () => {
   const [storeData, setStoreData] = useState([]);
@@ -35,7 +34,7 @@ const Shopping = () => {
         {isLoading ? (
           Array.from({length:6}).map((_,index)=>( 
 
-          <div key={index} className='"bg-white border-4 border-yellow-400 h-[350px] w-[240px]  p-2  mt-7 rounded-xl shadow-amber-500 shadow-lg'>
+          <div key={index} className='bg-white border-4 border-yellow-400 h-[350px] w-[240px]  p-2  mt-7 rounded-xl shadow-amber-500 shadow-lg'>
         <Skeleton className='mb-3 mt-[50px]' height={100} width="100%"></Skeleton>
         <Skeleton className='mb-2' height={30} width="100%"></Skeleton>
         <Skeleton className='mb-2' height={20} width="100%"></Skeleton><hr className='mt-6'></hr>
