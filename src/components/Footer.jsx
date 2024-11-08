@@ -1,10 +1,11 @@
 import React from 'react'
 import { FaFacebook,FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter,FaLinkedin } from "react-icons/fa6";
+import{Link} from "react-router-dom"
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 mt-32 mx-0.5">
+    <footer className="bg-gray-800 text-white py-8 mt-auto mx-0.5">
       <div className="container mx-auto px-6">
         <div className='grid md:grid-cols-3 gap-8'>
           <div className='text-center md:text-left ml-32'>
@@ -17,9 +18,9 @@ export const Footer = () => {
           <div className='text-center md:text-left ml-44'>
             <h3 className='text-xl font-semibold mb-4'>Categories</h3>
             <ul className='text-sm'>
-              <li>Men</li>
+             <Link to="/Shopping"> <li>Men</li>
               <li>Women</li>
-              <li>Accessories</li>
+              <li>Accessories</li></Link>
             </ul>
           </div>
           <div className='text-center md:text-left ml-20'>
