@@ -10,9 +10,10 @@ import Cart from './components/Pages/Cart'
 import Footer from './components/Footer'
 import ContactUs from "./components/Pages/ContactUs"
 import SearchBar from './components/searchBar'
+import ProductDetail from './components/Pages/ProductDetail'
 
 
-const App = () => {
+const App = () => { 
   return (
     <div >
     <UserProvider>
@@ -21,12 +22,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Shopping" element={<Shopping/>}/>
-          <Route path="/Cart" element={<Cart/>} />
+          <Route path="/Shopping/ProductDetail/:productId" element={<ProductDetail />} />
+           <Route path="/Cart" element={<Cart/>} />
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/searchbar" element={<SearchBar/>} />
-        </Routes>
+        </Routes> 
         <Footer/>
       </BrowserRouter>
     </UserProvider>
