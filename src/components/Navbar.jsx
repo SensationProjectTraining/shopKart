@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <h1 className="bg-customBrown w-full fixed text-center text-white font-bold h-8 py-0 ">
+      <h1 className="bg-blue-500 w-full fixed text-center text-white font-bold h-8 py-0 ">
         free shopping on Order Over $75. Free Return
       </h1>
 
@@ -24,7 +24,7 @@ const Navbar = () => {
 
         <div className=" font-serif  text-1xl flex justify-end w-full">
           <Link
-            className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
+            className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl" 
             to="/"
           >
             Home
