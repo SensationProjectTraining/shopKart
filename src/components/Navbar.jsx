@@ -15,7 +15,7 @@ const Navbar = () => {
       </h1>
       
       <div className="flex w-full">
-      <span className=" font-bold flex hover:text-white uppercase hover:bg-blue-700 text-left">Welcome,{currentUser.username}</span>
+      <span className=" font-bold flex hover:text-white uppercase hover:bg-blue-700 text-left">Welcome,{currentUser?.username}</span>
         <div className="bg-white text-1xl flex justify-end w-full">
           <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
             to="/">Home</Link>
