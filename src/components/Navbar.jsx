@@ -30,7 +30,7 @@ const Navbar = () => {
               <button className="px-2 font-bold hover:text-white hover:bg-blue-700"
                 onClick={() => {
                   logout();
-                  // Optional: navigate to home or login page after logout
+                 
                 }}
                 >
                 Logout
