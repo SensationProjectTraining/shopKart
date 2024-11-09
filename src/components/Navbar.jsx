@@ -14,8 +14,8 @@ const Navbar = () => {
         free shopping on Order Over $75. Free Return
       </h1>
       
-      <div className="flex w-full">
-      <span className=" font-bold flex hover:text-white uppercase hover:bg-blue-700 text-left">Welcome,{currentUser.username}</span>
+      <div className="flex w-full h-10 p-1 text-lg">
+      <span className=" font-bold flex hover:text-white uppercase hover:bg-blue-700 text-left">Welcome,{currentUser?.username}</span>
         <div className="bg-white text-1xl flex justify-end w-full">
           <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
             to="/">Home</Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
               <button className="px-2 font-bold hover:text-white hover:bg-blue-700"
                 onClick={() => {
                   logout();
-                  // Optional: navigate to home or login page after logout
+                 
                 }}
                 >
                 Logout
