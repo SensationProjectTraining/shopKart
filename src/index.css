@@ -1,13 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  /* font-family: 'Poppins', sans-serif;
+  background-color: #1f1f38;
+   line-height: 1.7;
+  background-image: url(../src/assets/bg-texture.png); */
+}
 
 @keyframes slide-left-to-right {
     0% {
       transform: translateX(-100%);
     }
     100% {
-      transform: translateX(100%);
+      transform: translateX(2%);
     }
   }
  
