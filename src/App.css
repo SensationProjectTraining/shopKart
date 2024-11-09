@@ -40,6 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+#showtext:hover{
+  overflow:visible;
+  white-space: noramal;
+  
+
 /* Apply ellipsis and hide overflow by default */
 .ellipsis {
   white-space: nowrap; /* Prevent wrapping */
@@ -52,5 +58,8 @@
   white-space: normal; /* Allow text to wrap */
   overflow: visible;   /* Make the overflow visible */
   text-overflow: unset; /* Remove ellipsis */
+  
 }
+}
+
 

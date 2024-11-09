@@ -13,6 +13,7 @@ const Navbar = () => {
         free shopping on Order Over $75. Free Return
       </h1>
 
+
       <div className="flex p-10 mt-2">
         {currentUser ? (
           <span className="font-bold flex uppercase fixed text-left px-4">
@@ -47,13 +48,14 @@ const Navbar = () => {
           >
             Contact
           </Link>
+
           {currentUser ? (
             <>
               <button
                 className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl "
                 onClick={() => {
                   logout();
-                  // Optional: navigate to home or login page after logout
+                 
                 }}
               >
                 Logout
