@@ -5,6 +5,7 @@ import { FaTwitter, FaLinkedin } from "react-icons/fa6";
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12 mt-32 mx-0.5">
+
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-5 gap-12 cursor-pointer">
           <div className="text-center md:text-left">
