@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+/* Apply ellipsis and hide overflow by default */
+.ellipsis {
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;    /* Hide overflowing text */
+  text-overflow: ellipsis; /* Show ellipsis (...) */
+}
+
+/* On hover, allow the text to wrap and remove truncation */
+.card:hover .ellipsis {
+  white-space: normal; /* Allow text to wrap */
+  overflow: visible;   /* Make the overflow visible */
+  text-overflow: unset; /* Remove ellipsis */
+}
+
