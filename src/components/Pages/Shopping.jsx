@@ -114,23 +114,12 @@ const Shopping = () => {
               </h1>
               <p className="text-slate-500 text-base h-[30px] overflow-hidden overflow-ellipsis whitespace-nowrap  mb-5">
                 {product.description}
-<<<<<<< HEAD
-              </p> 
-              <hr></hr>
-
-=======
               </p> <hr></hr>
->>>>>>> c225b72da75bc0ca4284df9ad9efc0d46617aab0
               <div className="flex items-center">
   <BsCurrencyDollar className="text-lg" />
   <p className="text-lg">{product.price}</p>
 </div>
 
-<<<<<<< HEAD
-              <div className="p-1 rounded-xl items-center text-white bg-green-700 inline-flex w-[50px] mt-3">
-                <h1>{product.rating.rate}</h1>
-                <FaStar className="text-lg" />
-=======
                 <div className="flex items-center">
                   <BsCurrencyDollar className="text-lg" />
                   <p className="text-lg">{product.price}</p>
@@ -141,7 +130,6 @@ const Shopping = () => {
                   <h1>{product.rating.rate}</h1>
                   <FaStar className="text-lg" />
                 </div>
->>>>>>> c225b72da75bc0ca4284df9ad9efc0d46617aab0
               </div>
             ))}
       </div>
