@@ -9,7 +9,6 @@ import 'react-loading-skeleton/dist/skeleton.css';
 export const DetailsPage = () => {
   const [storedata, setStoreData] = useState(null);  // Initialize as null
   const [loading, setLoading] = useState(true);  // Handle loading state
-  const [error, setError] = useState(null);  // Handle error state
   const { productId } = useParams();  // Extract productId from URL
 
   // Fetch data when productId changes
@@ -42,8 +41,8 @@ export const DetailsPage = () => {
         // Skeleton loader for when the page is loading
         <div className="flex items-start">
           {/* Image Skeleton Loader */}
-          <div className="bg-slate-300 p-4 h-[400px] w-[500px] flex items-center justify-center rounded-2xl box-border">
-            <Skeleton width={400} height={300} className='box-border rounded-2xl'/>
+          <div className="bg-slate-300 p-4 h-[400px] w-[400px] flex items-center justify-center rounded-2xl box-border">
+            <Skeleton width={300} height={300} className='box-border rounded-2xl'/>
           </div>
 
           {/* Text Skeleton Loader */}

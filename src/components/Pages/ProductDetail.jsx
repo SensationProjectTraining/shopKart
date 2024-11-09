@@ -118,3 +118,41 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+
+
+{/* <h1 className=" text-center h-[70px] bg-cover p-2 text-white font-bold text-4xl font-serif bg-[url('https://media1.thehungryjpeg.com/thumbs2/ori_3835815_wk0wopmkr838t66mrszoxs7sq5s3ei2ail3lh5o1_theater-stage-festive-background-audience-movie-opera-light-with-red.jpg')]">
+Shop Top Brands
+</h1>
+<div className="bg-[url('https://jooinn.com/images/red-stage-curtain-4.png')] p-3 flex flex-w */}
+// import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import { FaStar } from "react-icons/fa";
+// import { BsCurrencyDollar } from "react-icons/bs";
+// import Skeleton from "react-loading-skeleton";
+// import "react-loading-skeleton/dist/skeleton.css";
+// {isLoading
+//   ? Array.from({ length: 6 }).map((_, index) => (
+//       <div
+//         key={index}
+//         className="bg-white border-4 border-yellow-400 h-[400px] w-[240px] p-4 mt-7 rounded-xl shadow-amber-500 shadow-lg"
+//       >
+//         <Skeleton
+//           className="mb-3 mt-[50px]"
+//           height={100}
+//           width="100%"
+//         />
+//         <Skeleton className="mb-2" height={30} width="100%" />
+//         <Skeleton className="mb-2" height={20} width="100%" />
+//         <hr className="mt-6" />
+//         <Skeleton className="mb-2" height={20} width="40%" />
+//         <Skeleton height={30} width="20%" />
+//       </div>
+//     ))
+//   : storeData.map((product) => (
+//       <ProductCard key={product.id} product={product} />
+//     ))}
+// </div>
+// </div>
+// );
+// };
