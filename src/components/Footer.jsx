@@ -1,53 +1,130 @@
-import React from 'react'
-import { FaFacebook,FaInstagram } from "react-icons/fa";
-import { FaSquareXTwitter,FaLinkedin } from "react-icons/fa6";
+import React from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaLinkedin } from "react-icons/fa6";
 
 export const Footer = () => {
   return (
+    <footer className="bg-gray-900 text-white py-12 mt-32 mx-0.5">
 
-    <footer className="bg-gray-800 text-white py-8 mt-32 mx-0.5">
       <div className="container mx-auto px-6">
-        <div className='grid md:grid-cols-3 gap-8'>
-          <div className='text-center md:text-left ml-32'>
-            <h3 className='text-2xl font-semibold mb-4'>About Us</h3>
-            <p className='text-sm'>We are an e-commerce platform dedicated to providing high-quality products
-              to our customers. We offer a wide variety of
-              goods at competitive prices. Shop with us for the best deals and customer service.
-            </p>
-          </div>
-          <div className='text-center md:text-left ml-44'>
-            <h3 className='text-xl font-semibold mb-4'>Categories</h3>
-            <ul className='text-sm'>
-              <li>Men</li>
-              <li>Women</li>
-              <li>Accessories</li>
+        <div className="grid md:grid-cols-5 gap-12 cursor-pointer">
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-semibold mb-4 text-gray-300">
+              ABOUT US
+            </h3>
+            <ul className="text-sm text-gray-400">
+              <li>Store Location</li>
+              <li>Contact</li>
+              <li>Order Tracking</li>
             </ul>
           </div>
-          <div className='text-center md:text-left ml-20'>
-            <h3 className='text-xl font-semibold mb-4'>Contact Us</h3>
-            <p className='text-sm'>Email: support@shopkart.com</p>
-            <p className='text-sm mb-4'>Phone: (123) 456-7890</p>
-            <div className='flex justify-center md:justify-start space-x-4'>
-              <a href="https://www.facebook.com" target='_blank' className='text-white hover:text-blue-500'>
-              <FaFacebook size={20}/></a>
 
-              <a href="https://www.instagram.com" target='_blank' className='text-white hover:text-pink-500'>
-              <FaInstagram size={20}/></a>
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-semibold mb-4 text-gray-300">
+              USEFUL LINKS
+            </h3>
+            <ul className="text-sm text-gray-400">
+              <li>Returns</li>
+              <li>Suport Policy</li>
+              <li>Size Guide</li>
+              <li>FAQS</li>
+            </ul>
+          </div>
 
-              <a href="https://www.twitter.com" target='_blank' className='text-white hover:text-blue-500'>
-              <FaSquareXTwitter size={20}/></a>
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-semibold mb-4 text-gray-300">
+              CATAGORIES
+            </h3>
+            <ul className="text-sm text-gray-400">
+              <div className="grid md:grid-cols-3 gap-2 cursor-pointer">
+              <li>Men</li>
+              <li>Women</li>
+              <li>Accessories </li>
+              <li>Kids</li>
+              <li>Home </li>
+              <li>Beauty</li>
+              <li>Health</li>
+              <li>Kitchen</li>
+              <li>Cosmetics</li>
+              </div>
+            </ul>
+          </div>
 
-             <a href="https://www.linkedin.com" target='_blank' className='text-white hover:text-blue-500'>
-             <FaLinkedin size={20}/></a>
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-semibold mb-4 text-gray-300">
+              CONTACT US
+            </h3>
+            <p className="text-sm text-gray-400">
+              Email:{" "}
+              <a
+                href="mailto:support@shopkart.com"
+                className="text-blue-400 hover:underline"
+              >
+                support@shopkart.com
+              </a>
+            </p>
+            <p className="text-sm mb-4 text-gray-400">
+              Phone: <span className="text-blue-400">(123) 456-7890</span>
+            </p>
+
+            <div className="flex justify-center md:justify-start space-x-6">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                className="text-white hover:text-blue-500 transition duration-300 ease-in-out"
+              >
+                <FaFacebook size={22} />
+              </a>
+
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                className="text-white hover:text-pink-500 transition duration-300 ease-in-out"
+              >
+                <FaInstagram size={22} />
+              </a>
+
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                className="text-white hover:text-blue-400 transition duration-300 ease-in-out"
+              >
+                <FaTwitter size={22} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                className="text-white hover:text-blue-700 transition duration-300 ease-in-out"
+              >
+                <FaLinkedin size={22} />
+              </a>
             </div>
           </div>
-        </div>
-        <div className='mt-8 border-gray-600 pt-4 text-center text-sm'>
-          <p>&copy; {new Date().getFullYear()} ShopKart. All rights reserved.</p>
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-semibold mb-4 text-gray-300">
+              SUBSCRIBE
+            </h3>
+            <p className="text-sm text-gray-400">
+              Get E-mail updates about our latest shop and special offers.
+            </p>
+
+            <input
+              type="text"
+              placeholder="Enter your email address"
+              className="border border-zinc-400 mt-4 p-2 w-full max-w-md rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 ease-in-out bg-gray-600"
+            />
+          </div>
         </div>
 
+        <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+          <p>
+            &copy; {new Date().getFullYear()} ShopKart. All rights reserved.
+          </p>
         </div>
-        </footer>
-  )
-}
+      </div>
+    </footer>
+  );
+};
+
 export default Footer;
