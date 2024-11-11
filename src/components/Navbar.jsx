@@ -3,49 +3,72 @@ import { useUserContext } from "../Context/Context";
 import { IoMdSearch } from "react-icons/io";
 import { BiHelpCircle } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
-import SearchBar from "./searchBar";
 
 const Navbar = () => {
   const { currentUser, logout } = useUserContext();
-  
+
   return (
-    <div >
-      <h1 className="bg-customBrown text-center text-white font-bold h-8 py-1 ">
+    <div>
+      <h1 className="bg-customBrown w-full fixed text-center text-white font-bold h-8 py-0 ">
         free shopping on Order Over $75. Free Return
       </h1>
-      
-      <div className="flex w-full">
-      <span className=" font-bold flex hover:text-white uppercase hover:bg-blue-700 text-left">Welcome,{currentUser?.username}</span>
-        <div className="bg-white text-1xl flex justify-end w-full">
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/">Home</Link>
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/Shopping">Shopping</Link>
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/Cart">Cart</Link>
-          <Link className="px-2 font-bold hover:text-white hover:bg-blue-700"
-            to="/Contact">Contact</Link>
+
+      <div className="flex p-10 mt-2">
+        {currentUser ? (
+          <span className="font-bold flex uppercase fixed text-left px-4">
+            Welcome,{currentUser?.username}
+          </span>
+        ) : (
+          <></>
+        )}
+
+        <div className=" font-serif  text-1xl flex justify-end w-full">
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
+            to="/"
+          >
+            Home
+          </Link>
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
+            to="/Shopping"
+          >
+            Shopping
+          </Link>
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
+            to="/Cart"
+          >
+            Cart
+          </Link>
+          <Link
+            className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
+            to="/Contact"
+          >
+            Contact
+          </Link>
           {currentUser ? (
             <>
-              <button className="px-2 font-bold hover:text-white hover:bg-blue-700"
+              <button
+                className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl "
                 onClick={() => {
                   logout();
                   // Optional: navigate to home or login page after logout
                 }}
-                >
+              >
                 Logout
               </button>
             </>
           ) : (
             <>
               <Link
-                className="px-2 font-bold hover:text-white hover:bg-blue-700"
+                className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
                 to="/login"
               >
                 Login
               </Link>
               <Link
-                className="px-2 font-bold hover:text-white hover:bg-blue-700"
+                className="px-2 font-bold hover:text-white hover:bg-orange-500 hover:rounded-3xl"
                 to="/SignUP"
               >
                 SignUp
@@ -53,19 +76,17 @@ const Navbar = () => {
             </>
           )}
           <div className="flex text-2xl gap-2">
-          <Link to="/searchBar">
-          <IoMdSearch/>
-          </Link>
-          <Link><BiHelpCircle/></Link>
-          <Link to="/Cart"><MdShoppingCart/></Link>
+            <Link to="/searchBar">
+              <IoMdSearch className="hover:text-white hover:bg-orange-500 hover:rounded-3xl " />
+            </Link>
+            <Link>
+              <BiHelpCircle className="hover:text-white hover:bg-orange-500 hover:rounded-3xl" />
+            </Link>
+            <Link to="/Cart">
+              <MdShoppingCart className="hover:text-white hover:bg-orange-500 hover:rounded-3xl" />
+            </Link>
           </div>
         </div>
-      </div>
-
-      <div className="justify-center items-center bg-slate-100 flex gap-4 ">
-        <h3>Men Shoes</h3>
-        <h3>Women Shoes</h3>
-        <h3>New Arrivals</h3>
       </div>
     </div>
   );
