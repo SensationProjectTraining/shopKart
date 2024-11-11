@@ -5,35 +5,43 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 import { MdOutlineMessage } from 'react-icons/md';
 import Skeleton from 'react-loading-skeleton'; 
 import 'react-loading-skeleton/dist/skeleton.css';
+import { useUserContext } from '../../context/Context';
 
 export const DetailsPage = () => {
-  const [storedata, setStoreData] = useState(null);  // Initialize as null
-  const [loading, setLoading] = useState(true);  // Handle loading state
-  const { productId } = useParams();  // Extract productId from URL
+  const [storedata, setStoreData] = useState(null);  
+  const [loading, setLoading] = useState(true);  
+  const { productId } = useParams();
+ const {addToCart} = useUserContext();
 
-  // Fetch data when productId changes
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
         
-        // If response is not ok, throw error
+      
         if (!response.ok) {
           throw new Error('Product not found');
         }
         
         const data = await response.json();
-        setStoreData(data);  // Set the fetched data to state
+        setStoreData(data);  
       } catch (err) {
-        setError(err.message);  // Handle error
+        setError(err.message);  
       } finally {
-        setLoading(false);  // Stop loading once data is fetched or error occurs
+        setLoading(false);  
       }
     };
 
     fetchData();
-  }, [productId]);  // Run this effect when productId changes
+  }, [productId]);
+  
+   const handleAddToCart = ()=>{
+    if (storedata) {
+      addToCart(storedata);  
+    }
+   }
 
   return (
     <div className="p-6">
@@ -86,6 +94,7 @@ export const DetailsPage = () => {
             </div>
             <br />
             <button
+              onClick={handleAddToCart} 
               type="button"
               className="mt-3 relative w-[250px] bg-sky-400 p-2 font-bold text-white rounded-md hover:bg-gradient-to-tr from-red-500 to-yellow-300"
             >
