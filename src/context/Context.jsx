@@ -7,6 +7,7 @@ export const UserProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
     const [emails, setEmails] = useState([]); 
     const [passwords, setPasswords] = useState([]);
+    const [cart, setCart] = useState([]);
 
     const registerUser = (username, email, password) => {
         if (emails.includes(email)) {
@@ -34,15 +35,36 @@ export const UserProvider = ({ children }) => {
         setCurrentUser(null);
     };
 
+    const addToCart = (product) => {
+        setCart((prevCart) => {
+          const itemIndex = prevCart.findIndex((item) => item.id === product.id);
+          if (itemIndex >= 0) {
+            
+            const updatedCart = [...prevCart];
+            updatedCart[itemIndex].quantity += 1;
+            return updatedCart;
+          } else {
+            return [...prevCart, { ...product, quantity: 1 }];
+          }
+        });
+      };
+
+      const removeFromCart = (productId) => {
+        setCart((prevCart) => prevCart.filter(item => item.id !== productId));
+      };
+
     return (
         <AuthContext.Provider value={{ 
             currentUser,
             users, 
             emails, 
             passwords, 
+            cart,
             registerUser,
             login,
-            logout
+            logout,
+            addToCart,
+            removeFromCart
         }}>
             {children}
         </AuthContext.Provider>

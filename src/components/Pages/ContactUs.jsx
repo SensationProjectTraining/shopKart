@@ -29,19 +29,16 @@ const ContactUs = () => {
   };
 
   return (
-    <div
-      className="flex justify-center items-center min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('https://t4.ftcdn.net/jpg/08/99/00/05/240_F_899000540_YqPotErUSZSWjtt2q49F8s1wxxCS8YYG.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <form className="max-w-xl w-full mr-10" onSubmit={handleSubmit}>
-        <div className="p-8 border mt-2 border-gray-300 rounded-lg shadow-lg bg-white bg-opacity-30 font-serif">
-          <span className="text-5xl mb-8 text-center block">Contact Us</span>
+    
+
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-white to-violet-400 bg-opacity-50 z-10">
+        <form
+          className="max-w-xl w-full p-8 border border-gray-300 rounded-lg shadow-lg bg-white bg-opacity-80 backdrop-blur-lg font-serif"
+          onSubmit={handleSubmit}
+        >
+          <span className="text-5xl mb-8 text-center block text-gray-800">
+            Contact Us
+          </span>
 
           <div className="space-y-5">
             <div className="relative">
@@ -87,9 +84,9 @@ const ContactUs = () => {
               </button>
             </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+   
   );
 };
 
