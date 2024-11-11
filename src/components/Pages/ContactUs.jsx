@@ -29,21 +29,9 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="relative">
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source
-          src="https://cdn.pixabay.com/video/2019/09/12/26818-361092071_tiny.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+    
 
-      <div className="flex justify-center items-center min-h-screen bg-black bg-opacity-50 z-10">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-white to-violet-400 bg-opacity-50 z-10">
         <form
           className="max-w-xl w-full p-8 border border-gray-300 rounded-lg shadow-lg bg-white bg-opacity-80 backdrop-blur-lg font-serif"
           onSubmit={handleSubmit}
@@ -98,7 +86,7 @@ const ContactUs = () => {
           </div>
         </form>
       </div>
-    </div>
+   
   );
 };
 

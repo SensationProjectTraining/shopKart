@@ -43,26 +43,15 @@ const Login = () => {
   };
 
   return (
-    <div className="relative">
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source
-          src="https://cdn.pixabay.com/video/2022/06/22/121805-724719819_tiny.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+   
+     
 
-      <div className="flex items-center justify-center min-h-screen bg-black bg-opacity-50 z-10">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-white to-violet-400 bg-opacity-50 z-10">
         <form
           onSubmit={handleSubmit}
           className="max-w-2xl mx-auto p-8 border border-gray-300 rounded-lg shadow-xl bg-white bg-opacity-80 backdrop-blur-lg font-serif"
         >
-          <h2 className="text-6xl mb-8 text-center text-gray-800 font-bold">
+          <h2 className="text-5xl mb-8 text-center text-gray-800 font-bold">
             Login
           </h2>
 
@@ -129,7 +118,7 @@ const Login = () => {
           </p>
         </form>
       </div>
-    </div>
+   
   );
 };
 
