@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useUserContext } from "../Context/Context";
+import { useUserContext } from "../context/Context";
 import { IoMdSearch } from "react-icons/io";
 import { BiHelpCircle } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
