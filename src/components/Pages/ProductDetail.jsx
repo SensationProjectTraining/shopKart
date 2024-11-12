@@ -8,7 +8,12 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedSize, setSelectedSize] = useState(null);
+  const [cart, setCart]= useState(0)
 
+  function addTocart(){
+    setCart(productId)
+  }
+  console.log(productId)
   const handleSizeClick = (size) => {
     setSelectedSize(size);
   };
@@ -63,7 +68,7 @@ const ProductDetail = () => {
             <span className="text-green-700 text-lg font-semibold mr-1">
               {product.rating.rate}
             </span>
-            <FaStar className="text-yellow-500" />
+            <FaStar className="text-yellow-300" />
             <span className="text-gray-600 ml-2">
               2,523 ratings and 103 reviews
             </span>
@@ -78,6 +83,8 @@ const ProductDetail = () => {
                 className="w-10 h-10 border rounded p-1"
               />
             </div>
+
+          <button className="text-2xl text-red-800" onClick={addTocart}>Buy Now</button>
           </div>
 
           <div className="mt-4">
