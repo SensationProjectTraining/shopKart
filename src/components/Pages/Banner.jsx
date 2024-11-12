@@ -1,6 +1,7 @@
 import React from 'react';
 import bannerImg2 from "/Images/banner2.png";
 import { FaShoppingBag } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 const Banner = () => {
@@ -22,8 +23,8 @@ const Banner = () => {
         <div className="text-center md:text-left">
           <h1 className="text-5xl font-light mb-5">Collections</h1>
           <p className="text-xl mb-7">You can explore our collection from various brands here.</p>
-          <button className="bg-black hover:bg-orange-500 text-white px-6 py-2 font-semibold rounded-sm flex items-center">
-            <FaShoppingBag className="mr-2" />Shop Now
+          <button><Link to='/shopping' className="bg-black hover:bg-orange-500 text-white px-6 py-2 font-semibold rounded-sm flex items-center">
+            <FaShoppingBag className="mr-2" />Shop Now</Link>
           </button>
         </div>
       </div>
