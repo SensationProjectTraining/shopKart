@@ -14,7 +14,7 @@ const Navbar = () => {
       </h1>
 
 
-      <div className="flex p-10 mt-2">
+      <div className="flex p-10 mt-2 ">
         {currentUser ? (
           <span className="font-bold flex uppercase fixed text-left px-4">
             Welcome,{currentUser?.username}

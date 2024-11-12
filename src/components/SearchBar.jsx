@@ -1,5 +1,6 @@
 import { IoMdSearch } from "react-icons/io";
 const SearchBar = () => {
+ 
   function SearchClick(){
     alert("SearchBox is Active")
   }
