@@ -1,5 +1,6 @@
 import React from 'react';
 import { useUserContext } from '../../context/Context';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeFromCart } = useUserContext(); 
@@ -42,7 +43,7 @@ const Cart = () => {
             ))}
           </ul>
 
-          {/* Cart Summary */}
+         
           <div className="mt-4 border-t pt-4">
             <h2 className="text-2xl font-semibold">Cart Summary</h2>
             <p className="mt-2 font-semibold text-lg">
@@ -54,7 +55,16 @@ const Cart = () => {
            
           </div>
         </div>
+        
       )}
+      <div>
+        <Link to={'/Shopping'}>
+           <button className=' hover:bg-blue-700 font-bold text-xl border-2 p-3 m-3 bg-blue-400'>
+            Add more items 
+           </button>
+        
+        </Link>
+      </div>
     </div>
   );
 };
