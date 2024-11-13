@@ -8,7 +8,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 export const Shopping = () => {
   const [storedata, setStoreData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [cart, setCart] = useState({}); // Object to track individual product counts
+  const [currentpage,setCurrentPage]=useState(1);
+  const itemsperpage = 3;
+
 
   // Function to truncate text with ellipsis
   const truncateText = (text, limit) => {
@@ -35,18 +37,26 @@ export const Shopping = () => {
     };
     fetchData();
   }, []);
+  const LastIndex = currentpage* itemsperpage;
+  const FirstIndex = LastIndex - itemsperpage;
+  const currentProduct = storedata.slice(FirstIndex,LastIndex);
 
-  // Function to handle adding items to the cart
-  const addToCart = (productId) => {
-    setCart((prevCart) => {
-      // If the product is already in the cart, increment its count
-      if (prevCart[productId]) {
-        return { ...prevCart, [productId]: prevCart[productId] + 1 };
-      }
-      // Otherwise, add it to the cart with a count of 1
-      return { ...prevCart, [productId]: 1 };
-    });
-  };
+  const totalpages = Math.ceil(storedata.length/itemsperpage);
+  
+  const handlerPagination=(page)=>{
+    setCurrentPage(page)
+  }
+  const handlenext=()=>{
+    if(currentpage<totalpages){
+      setCurrentPage(currentpage+1)
+    }
+  }
+  const handleprev=()=>{
+    if(currentpage>1){
+      setCurrentPage(currentpage-1)
+    }
+  }
+
 
   return (
     <div>
@@ -68,7 +78,7 @@ export const Shopping = () => {
             </div>
           ))
         ) : (
-          storedata.map((product) => (
+          currentProduct.map((product) => (
             <div
               key={product.id}
               className="bg-white hover:scale-105 duration-300 ease-linear h-auto w-[250px] mt-5 mb-5 rounded-xl shadow-lg shadow-yellow-300 p-3"
@@ -94,17 +104,20 @@ export const Shopping = () => {
                   {product.rating.rate}
                   <FaStar className="inline-block items-center" />
                 </p>
-                <button
-                  className="bg-black text-white font-bold rounded-lg w-15 h-15"
-                  onClick={() => addToCart(product.id)}
-                >
-                  Buy Now
-                </button>
-                <label className="ml-2">{cart[product.id] || 0}</label> {/* Display count for this product */}
+                
+                
               </div>
             </div>
           ))
         )}
+      </div>
+
+      <div className='flex justify-center items-center gap-2 p-2 font-semibold bg-amber-100'>
+        <button type='button' onClick={handleprev} disabled={currentpage==1} className='rounded-lg border-2 border-blue-400 p-1'>Prev</button>
+      {[...Array(totalpages)].map((_,index)=>(
+        <button key={index} type='button' onClick={()=>handlerPagination(index+1)} className='rounded-lg border-2 border-blue-400 p-1 w-[35px]'>{index+1}</button>
+      ))}
+        <button type='button' onClick={handlenext} disabled={currentpage==totalpages} className='rounded-lg border-2 border-blue-400 p-1'>Next</button>
       </div>
     </div>
   );
