@@ -8,8 +8,7 @@ import SignUp from './components/Pages/SignUp'
 import Cart from './components/Pages/Cart'
 import Footer from './components/Footer'
 import ContactUs from "./components/Pages/ContactUs"
-import SearchBar from './components/searchBar'
-
+import FAQ from './components/Pages/FAQ'
 import { DetailsPage } from './components/Pages/DetailsPage'
 import { Shopping } from './components/Pages/Shopping'
 
@@ -31,7 +30,7 @@ const App = () => {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<SignUp/>}/>
-          <Route path="/searchbar" element={<SearchBar/>} />
+          <Route path="/FAQ" element={<FAQ/>}/>
         </Routes> 
         <Footer/>
       </BrowserRouter>
