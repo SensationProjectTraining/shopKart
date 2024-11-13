@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Pages/Home'
 import Login from './components/Pages/Login'
-import { UserProvider } from './Context/Context'
+import { UserProvider } from './context/Context'
 import SignUp from './components/Pages/SignUp'
 import Cart from './components/Pages/Cart'
 import Footer from './components/Footer'
@@ -19,7 +19,7 @@ const App = () => {
     <div >
     <UserProvider>
       <BrowserRouter>
-        <Navbar/><br/>
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>} />
 
