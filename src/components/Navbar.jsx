@@ -3,7 +3,6 @@ import { useUserContext } from "../context/Context";
 import { IoMdSearch } from "react-icons/io";
 import { BiHelpCircle } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
-import FAQ from "./Pages/FAQ";
 
 const Navbar = () => {
   const { currentUser, logout } = useUserContext();
