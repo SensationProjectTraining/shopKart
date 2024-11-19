@@ -10,6 +10,9 @@ export const Shopping = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentpage,setCurrentPage]=useState(1);
   const itemsperpage = 3;
+  const [value,setValue]=useState('');
+  const [searchvalue,setSearchvalue] = useState('');
+
 
 
   // Function to truncate text with ellipsis
@@ -37,11 +40,15 @@ export const Shopping = () => {
     };
     fetchData();
   }, []);
+  const filterdata = storedata.filter(product=>{
+    return product.title.toLowerCase().includes(searchvalue.toLowerCase());
+  })
+
   const LastIndex = currentpage* itemsperpage;
   const FirstIndex = LastIndex - itemsperpage;
-  const currentProduct = storedata.slice(FirstIndex,LastIndex);
+  const currentProduct = filterdata.slice(FirstIndex,LastIndex);
 
-  const totalpages = Math.ceil(storedata.length/itemsperpage);
+  const totalpages = Math.ceil(filterdata.length/itemsperpage);
   
   const handlerPagination=(page)=>{
     setCurrentPage(page)
@@ -56,8 +63,15 @@ export const Shopping = () => {
       setCurrentPage(currentpage-1)
     }
   }
-
-
+   const handlevalue=(e)=>{
+    setValue(e.target.value);
+   }
+   const hndlesearch=()=>{
+       setSearchvalue(value);
+       setCurrentPage(1);
+       setValue('')
+   }
+  
   return (
     <div>
       <div>
@@ -65,9 +79,13 @@ export const Shopping = () => {
           Shop Top Brands
         </h1>
       </div>
-      <div className="bg-[url('https://jooinn.com/images/red-stage-curtain-4.png')] h-auto w-full flex flex-wrap justify-around border-2 border-black gap-4 p-2">
+      <div className="bg-[url('https://jooinn.com/images/red-stage-curtain-4.png')] flex justify-center pt-3 gap-4">
+      <input type='text' value={value} onChange={handlevalue} placeholder='Enter Here' className='w-[300px] p-2 font-semibold rounded-xl  outline-none focus:border-4 border-yellow-400'/>
+      <button type='button' onClick={hndlesearch} className='bg-yellow-400 p-2 rounded-lg cursor-pointer font-bold'>Search</button>
+      </div>
+      <div className="bg-[url('https://jooinn.com/images/red-stage-curtain-4.png')] h-auto w-full flex flex-wrap justify-around  gap-4 p-2">
         {isLoading ? (
-          Array.from({ length: 6 }).map((_, index) => (
+         Array.from({ length: 6 }).map((_, index) => (
             <div key={index} className="bg-white h-auto w-[250px] rounded-xl p-3">
               <Skeleton height={100} width="100%" className="mb-3" />
               <Skeleton height={30} width="100%" className="mb-2" />
@@ -107,9 +125,12 @@ export const Shopping = () => {
                 
                 
               </div>
+    
             </div>
+           
           ))
         )}
+    
       </div>
 
       <div className='flex justify-center items-center gap-2 p-2 font-semibold bg-amber-100'>
